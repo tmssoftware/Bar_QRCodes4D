@@ -1,0 +1,19 @@
+program WebBarQRCodes;
+
+
+
+{$R *.dres}
+
+uses
+  Vcl.Forms,
+  WEBLib.Forms,
+  Umainform in 'Umainform.pas' {Form1: TWebForm} {*.html};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.
