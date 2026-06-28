@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{78233B8B-6103-4170-B6BE-C9BE59BE552A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="VCLTMSFNCBarQRCodes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="FMXTMSFNCBarQRCodes.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="VCLTMSFNCBarQRCodes">
+        <MSBuild Projects="VCLTMSFNCBarQRCodes.dproj"/>
+    </Target>
+    <Target Name="VCLTMSFNCBarQRCodes:Clean">
+        <MSBuild Projects="VCLTMSFNCBarQRCodes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="VCLTMSFNCBarQRCodes:Make">
+        <MSBuild Projects="VCLTMSFNCBarQRCodes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FMXTMSFNCBarQRCodes">
+        <MSBuild Projects="FMXTMSFNCBarQRCodes.dproj"/>
+    </Target>
+    <Target Name="FMXTMSFNCBarQRCodes:Clean">
+        <MSBuild Projects="FMXTMSFNCBarQRCodes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FMXTMSFNCBarQRCodes:Make">
+        <MSBuild Projects="FMXTMSFNCBarQRCodes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="VCLTMSFNCBarQRCodes;FMXTMSFNCBarQRCodes"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="VCLTMSFNCBarQRCodes:Clean;FMXTMSFNCBarQRCodes:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="VCLTMSFNCBarQRCodes:Make;FMXTMSFNCBarQRCodes:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

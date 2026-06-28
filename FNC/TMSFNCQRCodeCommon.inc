@@ -1,9 +1,22 @@
-﻿type
+﻿const
+{$IF COMPILERVERSION > 28}
+  pidWeb = $10000;
+{$ELSE}
+  pidWeb = $1000;
+{$IFEND}
+{$IFNDEF PAS2JS}
+  TMSWebPlatform = pidWin32 + pidWin64 + pidWeb;
+{$ENDIF}
+
+type
   TQRCodeErrorCorrection = (qrecL, qrecM, qrecQ, qrecH);
 
   TQRCodeMatrix = array of array of Integer;
   TIntegerArray = array of Integer;
 
+{$IFNDEF PAS2JS}
+  [ComponentPlatforms(TMSWebPlatform)]
+{$ENDIF}
   TTMSFNCQRCode = class(TTMSFNCControl)
   private
     FText: string;
