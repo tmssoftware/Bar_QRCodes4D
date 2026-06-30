@@ -1,6 +1,7 @@
 object Form1: TForm1
   Width = 640
   Height = 480
+  ElementFont = efCSS
   OnCreate = WebFormCreate
   object WebPageControl1: TWebPageControl
     Left = 0
@@ -8,7 +9,14 @@ object Form1: TForm1
     Width = 640
     Height = 360
     Align = alClient
-    TabIndex = 1
+    ElementFont = efCSS
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    TabIndex = 0
+    ParentFont = False
     TabOrder = 0
     object WebPageControl1Sheet1: TWebTabSheet
       Left = 0
@@ -16,16 +24,25 @@ object Form1: TForm1
       Width = 640
       Height = 340
       Caption = 'QR codes'
+      ElementFont = efCSS
       DesignSize = (
         640
         340)
       object WebLabel1: TWebLabel
-        Left = 3
+        Left = 10
         Top = 13
         Width = 85
         Height = 13
         Caption = 'QR code content:'
+        ElementLabelClassName = 'form-label'
+        ElementFont = efCSS
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
         HeightPercent = 100.000000000000000000
+        ParentFont = False
         WidthPercent = 100.000000000000000000
       end
       object TMSFNCQRCode1: TTMSFNCQRCode
@@ -40,11 +57,14 @@ object Form1: TForm1
         Text = 'https://www.tmssoftware.com'
       end
       object WebEdit1: TWebEdit
-        Left = 3
-        Top = 32
-        Width = 630
-        Height = 22
+        Left = 10
+        Top = 39
+        Width = 615
+        Height = 23
         ChildOrder = 1
+        ElementClassName = 'form-control'
+        ElementFont = efCSS
+        HeightStyle = ssAuto
         HeightPercent = 100.000000000000000000
         Text = 'https://www.tmssoftware.com'
         WidthPercent = 100.000000000000000000
@@ -58,25 +78,44 @@ object Form1: TForm1
       Height = 340
       Caption = 'Bar codes'
       ChildOrder = 1
+      ElementFont = efCSS
       DesignSize = (
         640
         340)
       object WebLabel2: TWebLabel
-        Left = 0
+        Left = 10
         Top = 13
         Width = 68
         Height = 13
         Caption = 'Barcode value'
+        ElementClassName = 'form-label'
+        ElementLabelClassName = 'form-label'
+        ElementFont = efCSS
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
         HeightPercent = 100.000000000000000000
+        ParentFont = False
         WidthPercent = 100.000000000000000000
       end
       object WebLabel3: TWebLabel
-        Left = 0
-        Top = 65
+        Left = 10
+        Top = 81
         Width = 64
         Height = 13
         Caption = 'Barcode type'
+        ElementClassName = 'form-label'
+        ElementLabelClassName = 'form-label'
+        ElementFont = efCSS
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
         HeightPercent = 100.000000000000000000
+        ParentFont = False
         WidthPercent = 100.000000000000000000
       end
       object TMSFNCBarCode1: TTMSFNCBarCode
@@ -97,10 +136,12 @@ object Form1: TForm1
         Value = '123456789012'
       end
       object WebComboBox1: TWebComboBox
-        Left = 0
-        Top = 84
-        Width = 145
+        Left = 10
+        Top = 114
+        Width = 175
         Height = 21
+        ElementClassName = 'form-select'
+        HeightStyle = ssAuto
         HeightPercent = 100.000000000000000000
         Text = 'WebComboBox1'
         WidthPercent = 100.000000000000000000
@@ -108,11 +149,13 @@ object Form1: TForm1
         ItemIndex = -1
       end
       object WebEdit2: TWebEdit
-        Left = 0
-        Top = 32
-        Width = 145
+        Left = 10
+        Top = 41
+        Width = 175
         Height = 22
         ChildOrder = 2
+        ElementClassName = 'form-control'
+        HeightStyle = ssAuto
         HeightPercent = 100.000000000000000000
         Text = '012345678'
         WidthPercent = 100.000000000000000000
@@ -704,18 +747,24 @@ object Form1: TForm1
       Height = 25
       Caption = 'Save as SVG'
       ChildOrder = 1
+      ElementClassName = 'btn btn-primary'
+      HeightStyle = ssAuto
       HeightPercent = 100.000000000000000000
+      WidthStyle = ssAuto
       WidthPercent = 100.000000000000000000
       OnClick = WebButton1Click
     end
     object WebButton2: TWebButton
-      Left = 118
+      Left = 179
       Top = 16
       Width = 96
       Height = 25
       Caption = 'Save as PNG'
       ChildOrder = 1
+      ElementClassName = 'btn btn-primary'
+      HeightStyle = ssAuto
       HeightPercent = 100.000000000000000000
+      WidthStyle = ssAuto
       WidthPercent = 100.000000000000000000
       OnClick = WebButton2Click
     end
